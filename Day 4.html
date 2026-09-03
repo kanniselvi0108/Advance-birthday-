@@ -1,1 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Day 4 ❤️</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:25px 18px;
+
+    font-family:Georgia,serif;
+    color:white;
+
+    background:
+    radial-gradient(circle at top,#70294d,transparent 45%),
+    linear-gradient(145deg,#10060c,#351426,#12070d);
+
+    overflow:hidden;
+}
+
+.container{
+    width:100%;
+    max-width:430px;
+    text-align:center;
+}
+
+.day{
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    letter-spacing:4px;
+    opacity:.6;
+    margin-bottom:18px;
+}
+
+h1{
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+.sub{
+    font-size:15px;
+    line-height:1.7;
+    opacity:.7;
+    margin-bottom:25px;
+}
+
+.card{
+    padding:30px 22px;
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+.heart{
+    width:95px;
+    height:95px;
+
+    margin:5px auto 25px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:42px;
+
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.25);
+
+    cursor:pointer;
+
+    animation:pulse 1.7s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.08);
+    }
+}
+
+.tap{
+    font-size:13px;
+    opacity:.6;
+}
+
+.message{
+    display:none;
+
+    font-size:17px;
+    line-height:1.9;
+
+    animation:showMessage 1.5s ease;
+}
+
+.message.show{
+    display:block;
+}
+
+@keyframes showMessage{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.highlight{
+    font-size:21px;
+    line-height:1.6;
+    margin-bottom:18px;
+}
+
+.small{
+    font-size:14px;
+    opacity:.75;
+    line-height:1.8;
+}
+
+.signature{
+    margin-top:22px;
+    font-size:16px;
+}
+
+.float{
+    position:fixed;
+    bottom:-30px;
+    animation:floatUp 5s linear forwards;
+    pointer-events:none;
+}
+
+@keyframes floatUp{
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="day">
+        DAY 04 / 26
+    </div>
+
+    <h1>
+        A Message For You 🫂❤️
+    </h1>
+
+    <div class="sub">
+        This isn't just a birthday wish...<br>
+        There's something I really want you to remember.
+    </div>
+
+    <div class="card">
+
+        <div class="heart" onclick="openMessage()">
+            ❤️
+        </div>
+
+        <div class="tap" id="tap">
+            Tap the heart...
+        </div>
+
+        <div class="message" id="message">
+
+            <div class="highlight">
+                Please don't feel down anymore,
+                my man. 🥺❤️‍🩹
+            </div>
+
+            I know you've been through things
+            that changed you in ways
+            people may never understand.
+
+            <br><br>
+
+            But please remember...
+
+            <br><br>
+
+            <strong>
+                Your past doesn't decide
+                the person you're going to become.
+            </strong>
+
+            <br><br>
+
+            Whatever happened,
+            whatever you lost,
+            whatever broke you...
+
+            <br>
+
+            <strong>
+                you still deserve a beautiful life.
+            </strong> 🫂
+
+            <br><br>
+
+            So from now on,
+            don't keep looking back and
+            hurting yourself for things
+            you cannot change.
+
+            <br><br>
+
+            Look forward. 🌙
+
+            <br><br>
+
+            Smile more.<br>
+            Dream again.<br>
+            Believe in yourself again.
+
+            <br><br>
+
+            <strong>
+                This new chapter of your life
+                should be about YOU.
+            </strong>
+
+            <br><br>
+
+            And whenever life feels heavy,
+            I hope you remember that
+            you don't have to carry everything alone. 🫂❤️‍🩹
+
+            <br><br>
+
+            <div class="small">
+
+                I may not be able to fix
+                everything you've been through...
+
+                <br>
+
+                but I'll always wish to see
+                you happy, peaceful,
+                and proud of the person
+                you're becoming.
+
+            </div>
+
+            <div class="signature">
+                Advance Happiest Birthday,<br>
+                <strong>My Man 🧿❤️</strong>
+                <br><br>
+                Your best days are still ahead. 🌅
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function openMessage(){
+
+    document.getElementById("message")
+        .classList.add("show");
+
+    document.getElementById("tap")
+        .style.display="none";
+
+    document.querySelector(".heart")
+        .innerHTML="💗";
+
+    createHearts();
+
+}
+
+
+function createHearts(){
+
+    const emojis=[
+        "❤️",
+        "🤍",
+        "💗",
+        "🫂",
+        "🥹",
+        "✨"
+    ];
+
+    for(let i=0;i<25;i++){
+
+        const heart=
+            document.createElement("div");
+
+        heart.className="float";
+
+        heart.innerText=
+            emojis[
+                Math.floor(
+                    Math.random()*emojis.length
+                )
+            ];
+
+        heart.style.left=
+            Math.random()*100+"vw";
+
+        heart.style.fontSize=
+            (14+Math.random()*18)+"px";
+
+        heart.style.animationDuration=
+            (3+Math.random()*4)+"s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(
+            ()=>heart.remove(),
+            8000
+        );
+    }
+
+}
+
+</script>
+
+</body>
+</html>
